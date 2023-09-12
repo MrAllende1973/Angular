@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Inicio de Sesion </h2>
+
+    <!-- Icono de usuario -->
+    <div class="fadeIn first">
+      <img src="assets/logouta.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Mostrar mensaje de error -->
+    <div *ngIf="errorStatus" class="alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Formulario de inicio de sesión -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Correo electrónico" formControlName="email">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" formControlName="password">
+      <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
+    </form>
+  </div>
+</div>
